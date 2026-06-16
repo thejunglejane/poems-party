@@ -45,8 +45,6 @@ def degree_of_decade(dt):
         # If the first year of a decade is a leap year, it will have
         # 3 leap years (rather than 2). At the granularity/scale of
         # this visualization, 1d doesn't make a noticeable difference.
-        # But I learned this during my research on this project and
-        # wanted to include it :)
         denom = 3652
         if decade % 4 == 0:
             denom = 3653
