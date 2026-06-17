@@ -1,10 +1,10 @@
 """Augment poets' birth, death, and publication data for visualization.
 
-These data will be visualized as a series of concentric rings
-corresponding to decades, similar to tree rings. This script extracts
-the decades of a poet's life (and beyond, for posthumously-published
-poets) and calculates the degrees within each decade that correspond
-to their birth, death, and the publication of their poem(s).
+These data are visualized as a series of concentric rings corresponding
+to decades, similar to tree rings. This script extracts the decades of
+a poet's life (and beyond, for posthumously-published poets) and
+calculates the degrees within each decade that correspond to their
+birth and death and the publication of their poem(s).
 """
 import math
 from datetime import date
@@ -12,56 +12,75 @@ from datetime import date
 import pandas as pd
 
 
-def extract_year(dt):
+def extract_year(dt: date) -> int:
+    """Given a date, return the year."""
     if pd.notnull(dt):
         return int(dt.year)
 
 
-def extract_decade(dt):
+def extract_decade(dt: date) -> int:
+    """Given a date, return the decade."""
     if pd.notnull(dt):
         return int((dt.year // 10) * 10)
 
 
-def nth_ring(row, column):
+def nth_ring(row: pd.Series, column: str) -> int:
+    """Return the nth decade when the target column event occurred."""
     if pd.notnull(row[column]):
         decade = extract_decade(row[column])
+        birth_decade = extract_decade(row["birth_date"])
 
-        return math.ceil((decade - row["birth_decade"] + 1) / 10)
+        return math.ceil((decade - birth_decade + 1) / 10)
 
 
-def day_of_decade(dt):
+def day_of_decade(dt: date) -> int:
+    """Given a date, return the day of the decade."""
     if pd.notnull(dt):
         decade = extract_decade(dt)
         decade_begin = date(decade, 1, 1)
 
-        return dt - decade_begin
+        return (dt - decade_begin).days + 1
 
 
-def degree_of_decade(dt):
+def degree_of_decade(dt: date) -> float:
+    """Return the degree from (0, 360) that corresponds to the given date.
+
+    This is similar to day_of_decade, but maps the nth day to the
+    corresponding degree on a circle.
+    """
     if pd.notnull(dt):
         decade = extract_decade(dt)
-        td = day_of_decade(dt)
+        td = day_of_decade(dt) - 1
+
+        total_days = 3652
 
         # If the first year of a decade is a leap year, it will have
         # 3 leap years (rather than 2). At the granularity/scale of
         # this visualization, 1d doesn't make a noticeable difference.
-        denom = 3652
         if decade % 4 == 0:
-            denom = 3653
+            total_days = 3653
 
-            # Every 100 years we skip a leap year,
+            # Every 100 years we skip a leap year
             # unless that year is divisible by 400
             if decade % 100 == 0:
                 if decade % 400 != 0:
-                    denom = 3652
+                    total_days = 3652
 
-        theta = 360/denom
+        theta = 360/total_days
 
-        return round(td.days * theta, 1)
+        return round(td * theta, 1)
 
 
-def rings_per_poet(df):
+def rings_per_poet(df: pd.DataFrame) -> pd.Series:
+    """Determine the number of decade rings needed for each poet.
+
+    This function isn't applied rowwise since some poets appear
+    multiple times in the dataset.
+    """
     df_ = df.copy()
+
+    if "pub_ring" not in df_.columns:
+        df_["pub_ring"] = df_.apply(lambda x: nth_ring(x, "pub_date"), axis=1)
 
     # Fill in death date information for living poets
     df_["death_date"] = df_["death_date"].fillna(date(2025, 12, 31))
