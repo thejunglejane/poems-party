@@ -89,61 +89,62 @@ def rings_per_poet(df: pd.DataFrame) -> pd.Series:
     return df_.groupby("poet")[["death_ring", "pub_ring"]].max().max(axis=1)
 
 
-# Read in the raw data
-df = pd.read_csv("data/poets_poems_raw.csv")
-date_columns = ["birth_date", "death_date", "pub_date"]
+if __name__ == "__main__":
+    # Read in the raw data
+    df = pd.read_csv("data/poets_poems_raw.csv")
+    date_columns = ["birth_date", "death_date", "pub_date"]
 
-# Preserve original date information
-for column in date_columns:
-    df.rename(
-        columns={column: "_".join([column, "raw"])},
-        inplace=True
-    )
+    # Preserve original date information in "raw" columns
+    for column in date_columns:
+        df.rename(
+            columns={column: "_".join([column, "raw"])},
+            inplace=True
+        )
 
-# Coerce birth, death, and pub dates to date objects
-# format="mixed" to handle Richard Siken, Carolyn Kizer
-for column in date_columns:
-    df[column] = pd.to_datetime(
-        df[f"{column}_raw"],
-        errors="coerce",
-        format="mixed"
-    ).dt.date
+    # Coerce birth, death, and pub dates to date objects
+    # format="mixed" to handle Richard Siken, Carolyn Kizer
+    for column in date_columns:
+        df[column] = pd.to_datetime(
+            df[f"{column}_raw"],
+            errors="coerce",
+            format="mixed"
+        ).dt.date
 
-# Special case: Python can't parse "Oct/Nov 1963"
-df.loc[df["poet"] == "Carolyn Kizer", "pub_date"] = date(1963, 1, 1)
-
-
-# Extract year, decade, and day of decade from all dates, and determine
-# which ring and how many degrees on that ring each date corresponds to
-for column in date_columns:
-    df[column.replace("date", "year")] = df[column].apply(lambda x: extract_year(x))
-    df[column.replace("date", "decade")] = df[column].apply(lambda x: extract_decade(x))
-    df[column.replace("date", "day_of_decade")] = df[column].apply(lambda x: day_of_decade(x))
-    df[column.replace("date", "ring")] = df.apply(lambda x: nth_ring(x, column), axis=1)
-    df[column.replace("date", "degrees")] = df[column].apply(lambda x: degree_of_decade(x))
-
-    # Since we only know Richard Siken's birth year, we treat it as a
-    # duration (year) rather than a point in time
-    if column == "birth_date":
-        df.loc[df["poet"] == "Richard Siken", "birth_degrees_end"] = df["birth_degrees"] + 36
-
-    # Publication is a span (year) rather than a point in time (date),
-    # so we capture the ending degree, too
-    if column == "pub_date":
-        df["pub_degrees_end"] = df["pub_degrees"] + 36
+    # Special case: Python can't parse "Oct/Nov 1963"
+    df.loc[df["poet"] == "Carolyn Kizer", "pub_date"] = date(1963, 1, 1)
 
 
-# For living poets, capture their ongoing life from the end
-# of the dataset to now
-df.loc[df["death_date"].isnull(), "ongoing_begin_degrees"] = degree_of_decade(date(2025, 12, 31))
-df.loc[df["death_date"].isnull(), "ongoing_end_degrees"] = degree_of_decade(date.today())
+    # Extract year, decade, and day of decade from all dates, and determine
+    # which ring and how many degrees on that ring each date corresponds to
+    for column in date_columns:
+        df[column.replace("date", "year")] = df[column].apply(lambda x: extract_year(x))
+        df[column.replace("date", "decade")] = df[column].apply(lambda x: extract_decade(x))
+        df[column.replace("date", "day_of_decade")] = df[column].apply(lambda x: day_of_decade(x))
+        df[column.replace("date", "ring")] = df.apply(lambda x: nth_ring(x, column), axis=1)
+        df[column.replace("date", "degrees")] = df[column].apply(lambda x: degree_of_decade(x))
+
+        # Since we only know Richard Siken's birth year, we treat it as a
+        # duration (year) rather than a point in time
+        if column == "birth_date":
+            df.loc[df["poet"] == "Richard Siken", "birth_degrees_end"] = df["birth_degrees"] + 36
+
+        # Publication is a span (year) rather than a point in time (date),
+        # so we capture the ending degree, too
+        if column == "pub_date":
+            df["pub_degrees_end"] = df["pub_degrees"] + 36
 
 
-# Determine the total number of rings needed for each poet,
-# including posthumously-published poets
-gb = rings_per_poet(df)
-df["n_rings_total"] = gb[df.set_index("poet").index].values
+    # For living poets, capture their ongoing life from the end
+    # of the dataset to now
+    df.loc[df["death_date"].isnull(), "ongoing_begin_degrees"] = degree_of_decade(date(2025, 12, 31))
+    df.loc[df["death_date"].isnull(), "ongoing_end_degrees"] = degree_of_decade(date.today())
 
-# Sort the dataset and write to csv
-df = df.sort_values(by=["birth_date", "pub_date", "poem"])
-df.to_csv("data/poets_poems.csv", index=False, mode="w")
+
+    # Determine the total number of rings needed for each poet,
+    # including posthumously-published poets
+    gb = rings_per_poet(df)
+    df["n_rings_total"] = gb[df.set_index("poet").index].values
+
+    # Sort the dataset and write to csv
+    df = df.sort_values(by=["birth_date", "pub_date", "poem"])
+    df.to_csv("data/poets_poems.csv", index=False, mode="w")
