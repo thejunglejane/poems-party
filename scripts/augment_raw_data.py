@@ -96,10 +96,7 @@ if __name__ == "__main__":
 
     # Preserve original date information in "raw" columns
     for column in date_columns:
-        df.rename(
-            columns={column: "_".join([column, "raw"])},
-            inplace=True
-        )
+        df.rename(columns={column: "_".join([column, "raw"])}, inplace=True)
 
     # Coerce birth, death, and pub dates to date objects
     # format="mixed" to handle Richard Siken, Carolyn Kizer
@@ -123,28 +120,27 @@ if __name__ == "__main__":
         df[column.replace("date", "ring")] = df.apply(lambda x: nth_ring(x, column), axis=1)
         df[column.replace("date", "degrees")] = df[column].apply(lambda x: degree_of_decade(x))
 
-        # Since we only know Richard Siken's birth year, we treat it as a
-        # duration (year) rather than a point in time
+        # Special case: since we only know Richard Siken's birth year,
+        # we treat it as a duration (year) rather than a point in time
         if column == "birth_date":
             df.loc[df["poet"] == "Richard Siken", "birth_degrees_end"] = df["birth_degrees"] + 36
 
-        # Publication is a span (year) rather than a point in time (date),
-        # so we capture the ending degree, too
+        # Publication is a span (year) rather than a point in time,
+        # (date), so we capture the ending degree, too
         if column == "pub_date":
             df["pub_degrees_end"] = df["pub_degrees"] + 36
 
 
-    # For living poets, capture their ongoing life from the end
-    # of the dataset to now
+    # For living poets, capture their ongoing life
+    # from the end of the dataset to now
     df.loc[df["death_date"].isnull(), "ongoing_begin_degrees"] = degree_of_decade(date(2025, 12, 31))
     df.loc[df["death_date"].isnull(), "ongoing_end_degrees"] = degree_of_decade(date.today())
 
 
-    # Determine the total number of rings needed for each poet,
-    # including posthumously-published poets
+    # Determine the total number of rings needed for each poet
     gb = rings_per_poet(df)
     df["n_rings_total"] = gb[df.set_index("poet").index].values
 
     # Sort the dataset and write to csv
-    df = df.sort_values(by=["birth_date", "pub_date", "poem"])
+    df.sort_values(by=["birth_date", "pub_date", "poem"], inplace=True)
     df.to_csv("data/poets_poems.csv", index=False, mode="w")
