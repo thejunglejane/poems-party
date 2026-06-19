@@ -1,44 +1,44 @@
-poet,poem,party,birth_date_raw,death_date_raw,pub_date_raw,notes
-Ross Gay,Catalog of Unabashed Gratitude,I,1974/08/01,,2015,
-Gerard Manley Hopkins,The Windhover,I,1844/07/28,1889/06/08,1914,
-Robert W Service,The Cremation of Sam McGee,I,1874/01/16,1958/09/11,1907,
-Robert Hass,Meditation at Lagunitas,I,1941/03/01,,1979,
-Michael Ondaatje,The Cinnamon Peeler,I,1943/09/12,,1985,
-Robert Hass,Spring Drawing 2,I,1941/03/01,,1989,
-W H Auden,Compline,I,1907/02/21,1973/09/29,1955,
-Tony Hoagland,Reasons to Survive November,I,1953/11/19,2018/10/23,2003,
-Walt Whitman,Crossing Brooklyn Ferry,II,1819/05/31,1892/03/26,1860,"Originally published in 1856 as ""Sun-Down Poem"""
-Philip Larkin,Coming,II,1922/08/09,1985/12/02,1955,
-Edna St. Vincent Millay,Dirge Without Music,II,1892/02/22,1950/10/19,1928,
-Edna St. Vincent Millay,First Fig,II,1892/02/22,1950/10/19,1920,
-Allen Ginsberg,A Supermarket in California,II,1926/06/03,1997/04/05,1956,
-Mary Ruefle,Vapor Wake,II,1952/04/16,,May 2020,
-Carolyn Kizer,Déjeuner Sur l’Herbe,II,1925/12/10,2014/10/09,Oct/Nov 1963,
-Frank O’Hara,Homosexuality,II,1926/05/27,1966/07/25,May 1970,
-Frank O’Hara,Ave Maria,II,1926/05/27,1966/07/25,1964,
-Charles Wright,Lives of the Saints,II,1935/08/25,,1995,Later published in Black Zodiac (1997)
-Margaret Atwood,You Take My Hand,II,1939/11/18,,1971,
-Wisława Szymborska,Vietnam,III,1923/07/02,2012/02/01,1967,
-Alice Notley,At Night the States,III,1945/11/08,2025/05/19,2006,
-Anne Boyer,What Resembles the Grave but Isn’t,III,1973/07/26,,2013,
-Andrea Gibson,Tincture,III,1975/08/13,2025/07/14,2018,
-Adrienne Rich,Song,III,1929/05/16,2012/03/27,1973,
-Rita Dove,American Smooth,III,1952/08/28,,2004,
-Sharon Olds,When They Say You Have Maybe Three Months to Live,III,1942/11/19,,2022,
-Dorothy Parker,News Item,III,1893/08/22,1967/06/07,1926,
-Dorothy Parker,Song of One of the Girls,III,1893/08/22,1967/06/07,1926,
-Dorothy Parker,Symptom Recital,III,1893/08/22,1967/06/07,1926,
-p. hodges adams,My Mother,III,1997/06/30,,2024,
-Patricia Lockwood,There Were No New Colors for Years,III,1982/04/27,,2014,
-Emily Dickinson,Tell all the truth but tell it slant,III,1830/12/10,1886/05/15,1945,Published in unedited form in The Poems of Emily Dickinson (1955)
-Emily Dickinson,There is a solitude of space,III,1830/12/10,1886/05/15,1914,Published in unedited form in The Poems of Emily Dickinson (1955)
-Kim Addonizio,Stolen Moments,III,1954/07/31,,Sep 1999,
-Kim Addonizio,To the woman crying uncontrollably in the next stall,III,1954/07/31,,2021,
-Hera Lindsay Byrd,Pyramid Scheme,IV,1987/12/31,,Feb 2018,
-T. S. Eliot,The Love Song of J. Alfred Prufrock,IV,1888/09/26,1965/01/04,1915,Later published in Prufrock and Other Observations (1917)
-Richard Siken,You Are Jeff,IV,1967,,2005,
-Sarah Kay,The First Poem in the Book,IV,1988/06/19,,2014,
-Lewis Carroll,The Walrus and the Carpenter,IV,1832/01/27,1898/01/14,1871,
-W. B. Yeats,Meditations in Time of Civil War,IV,1865/06/13,1939/01/28,1928,
-W. B. Yeats,Easter 1916,IV,1865/06/13,1939/01/28,1921,"Originally written in 1916, with an initial issue of 25 copies printed privately"
-Frank O’Hara,Mayakovsky,IV,1926/05/27,1966/07/25,1957,
+poet,poem,party,birth_date,death_date,pub_date,publication,notes
+Ross Gay,Catalog of Unabashed Gratitude,I,1974/08/01,,2015,Catalog of Unabashed Gratitude,
+Gerard Manley Hopkins,The Windhover,I,1844/07/28,1889/06/08,1914,Poems of Gerard Manley Hopkins,
+Robert W Service,The Cremation of Sam McGee,I,1874/01/16,1958/09/11,1907,Songs of Sourdough,
+Robert Hass,Meditation at Lagunitas,I,1941/03/01,,1979,Praise,
+Michael Ondaatje,The Cinnamon Peeler,I,1943/09/12,,1985,Secure Love,Originally published in his fictionalized memoir Running in the Family (1982)
+Robert Hass,Spring Drawing 2,I,1941/03/01,,1989,Human Wishes,
+W H Auden,Compline,I,1907/02/21,1973/09/29,1955,The Shield of Achilles,
+Tony Hoagland,Reasons to Survive November,I,1953/11/19,2018/10/23,2003,What Narcissism Means to Me,
+Walt Whitman,Crossing Brooklyn Ferry,II,1819/05/31,1892/03/26,1860,Leaves of Grass,"Originally published in 1856 as ""Sun-Down Poem"""
+Philip Larkin,Coming,II,1922/08/09,1985/12/02,1950,XX Poems,Later published in The Less Deceived (1955)
+Edna St. Vincent Millay,Dirge Without Music,II,1892/02/22,1950/10/19,1928,The Buck in the Snow and Other Poems,
+Edna St. Vincent Millay,First Fig,II,1892/02/22,1950/10/19,1920,A Few Figs from Thistles,
+Allen Ginsberg,A Supermarket in California,II,1926/06/03,1997/04/05,1956,Howl and Other Poems,
+Mary Ruefle,Vapor Wake,II,1952/04/16,,May 2020,Poetry [magazine],
+Carolyn Kizer,Déjeuner Sur l’Herbe,II,1925/12/10,2014/10/09,Oct/Nov 1963,Poetry [magazine],
+Frank O’Hara,Homosexuality,II,1926/05/27,1966/07/25,May 1970,Poetry [magazine],
+Frank O’Hara,Ave Maria,II,1926/05/27,1966/07/25,1964,Lunch Poems,
+Charles Wright,Lives of the Saints,II,1935/08/25,,Dec 1995,Poetry [magazine],Later published in Black Zodiac (1997)
+Margaret Atwood,You Take My Hand,II,1939/11/18,,1971,Power Politics,
+Wisława Szymborska,Vietnam,III,1923/07/02,2012/02/01,1967,,
+Alice Notley,At Night the States,III,1945/11/08,2025/05/19,2006,Grave of Light,
+Anne Boyer,What Resembles the Grave but Isn’t,III,1973/07/26,,2013,A Form of Sabotage,
+Andrea Gibson,Tincture,III,1975/08/13,2025/07/14,2018,Lord of the Butterflies,
+Adrienne Rich,Song,III,1929/05/16,2012/03/27,1973,Diving into the Wreck,
+Rita Dove,American Smooth,III,1952/08/28,,Feb 2003,The New Yorker [magazine],Later published in American Smooth (2004)
+Sharon Olds,When They Say You Have Maybe Three Months to Live,III,1942/11/19,,2022,Balladz,
+Dorothy Parker,News Item,III,1893/08/22,1967/06/07,1926,Enough Rope,
+Dorothy Parker,Song of One of the Girls,III,1893/08/22,1967/06/07,1926,Enough Rope,
+Dorothy Parker,Symptom Recital,III,1893/08/22,1967/06/07,1926,Enough Rope,
+p. hodges adams,My Mother,III,1997/06/30,,2024,like a field [magazine],
+Patricia Lockwood,There Were No New Colors for Years,III,1982/04/27,,2014,Motherland fatherland homelandsexuals,
+Emily Dickinson,Tell all the truth but tell it slant,III,1830/12/10,1886/05/15,1945,,Published in unedited form in The Poems of Emily Dickinson (1955)
+Emily Dickinson,There is a solitude of space,III,1830/12/10,1886/05/15,1914,,Published in unedited form in The Poems of Emily Dickinson (1955)
+Kim Addonizio,Stolen Moments,III,1954/07/31,,Sep 1999,Poetry [magazine],
+Kim Addonizio,To the woman crying uncontrollably in the next stall,III,1954/07/31,,2021,Now We're Getting Somewhere,
+Hera Lindsay Byrd,Pyramid Scheme,IV,1987/12/31,,Feb 2018,Poetry [magazine],
+T. S. Eliot,The Love Song of J. Alfred Prufrock,IV,1888/09/26,1965/01/04,Jun 1915,Poetry [magazine],Later published in Prufrock and Other Observations (1917)
+Richard Siken,You Are Jeff,IV,1967,,2005,Crush,
+Sarah Kay,The First Poem in the Book,IV,1988/06/19,,2014,No Matter the Wreckage,
+Lewis Carroll,The Walrus and the Carpenter,IV,1832/01/27,1898/01/14,1871,Through the Looking-Glass,
+W. B. Yeats,Meditations in Time of Civil War,IV,1865/06/13,1939/01/28,1928,The Tower,
+W. B. Yeats,Easter 1916,IV,1865/06/13,1939/01/28,1921,Michael Robartes and the Dancer,"Originally written in 1916, with an initial issue of 25 copies printed privately"
+Frank O’Hara,Mayakovsky,IV,1926/05/27,1966/07/25,1957,Meditations in an Emergency,
