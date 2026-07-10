@@ -134,7 +134,7 @@ if __name__ == "__main__":
     # For living poets, capture their ongoing life
     # from the end of the dataset to now
     df.loc[df["death_date"].isnull(), "ongoing_begin_degrees"] = degree_of_decade(date(2025, 12, 31))
-    df.loc[df["death_date"].isnull(), "ongoing_end_degrees"] = degree_of_decade(date.today())
+    df.loc[df["death_date"].isnull(), "ongoing_end_degrees"] = degree_of_decade(date(2026, 7, 9))
 
 
     # Determine the total number of rings needed for each poet
