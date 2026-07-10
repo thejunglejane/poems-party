@@ -18,4 +18,8 @@ I've included notes wherever there was ambiguity or I had to make an editorial c
 
 These data were created by me with the assistance of my sister, p. hodges adams, using sources including: [Wikipedia](wikipedia.org), [Poetry Foundation](poetryfoundation.org), [Poetry Archive](poetryarchive.org), [Pome](https://mattogle.com/#), our personal poetry collections, and the poetry sections at [McNally Jackson](https://mcnallyjackson.com/store/5) and [Daedalus](https://www.instagram.com/daedalusbookscharlottesville/).
 
-During this project, I was surprised by how many poems appear on the internet with incomplete or no citation information. In the future, I'll include full citations for the editions/versions that correspond to the publication dates represented in this dataset (see [#1 Add bibliography](https://github.com/thejunglejane/poems-party/issues/1)).
+During this project, I was surprised by how many poems appear on the internet with incomplete or no citation information. I've included a [works cited](https://github.com/thejunglejane/poems-party/tree/main/data/WORKS_CITED.md) page containing references for publication date information. Some works cited are for the published poems themselves, while others are for material that answer the question "when was this first published?" For collections that I own, there's no electronic container information included. For any collections I don't own, there's an electronic container that shows where I confirmed 1) that a poem was included in the given collection, and 2) the publication information of the collection.
+
+## Corrections
+
+If you find errors in the data, especially earler publications than are captured here, please [open an issue](https://github.com/thejunglejane/poems-party/issues/new/choose) with the correction and a source (cited in MLA format).
