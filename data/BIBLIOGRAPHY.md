@@ -1,7 +1,7 @@
 # Bibliography
 
 Berke, Amy, et al. "Writing the Nation: A Concise Introduction to American Literature 1865-Present." University Press  
-&emsp;&emsp;of North Georgia, 2015, p. 584. *English Open Textbooks*, oer.galileo.usg.edu/english-textbooks/5/. Accessed
+&emsp;&emsp;of North Georgia, 2015, p. 584. *English Open Textbooks*, oer.galileo.usg.edu/english-textbooks/5/. Accessed  
 &emsp;&emsp;9 July 2026.  
 
 Färber, Beatrix, and Rebecca Daly. "Meditations in Time of Civil War: Background details and bibliographic information."  
@@ -12,9 +12,6 @@ Fennell, Frank. "Poems." *Gerard Manley Hopkins*, International Hopkins Associat
 
 Hass, Robert. "Human Wishes." Ecco Press, 1989. *VOCA*, University of Arizona Poetry Center,  
 &emsp;&emsp;voca.arizona.edu/track/id/63596. Accessed 9 July 2026.  
-
-Hass, Robert. "Praise." Harper Collins, 1979. *Poetry Foundation*, poetryfoundation.org/poems/47553/meditation-at-lagunitas.
-&emsp;&emsp;Accessed 9 July 2026.  
 
 Hopkins, Gerard Manley. "Poems of Gerard Manley Hopkins," edited by Robert Bridges. Humphrey Milford, 1918. *Project*  
 &emsp;&emsp;*Gutenberg*, 26 August 2007, gutenberg.org/cache/epub/22403/pg22403-images.html. Accessed 9 July 2026.  
@@ -29,7 +26,7 @@ Thwaite, Anthony. Introduction. *Collected Poems,* by Philip Larkin, The Marvel 
 Millay, Edna St. Vincent. "Dirge Without Music." *Harper's Monthly Magazine*, vol. 157, Harper and Brothers, 1928, p.  
 &emsp;&emsp;245. *HathiTrust*, 5 October 2024, babel.hathitrust.org/cgi/pt?id=mdp.39015056094587. Accessed 9 July 2026.  
 
-Ondaatje, Michael. "Running in the Family." McLelland and Stewart, 1982. *Auroras and Sad Prose*, Kate Couture, 21 Jun.
+Ondaatje, Michael. "Running in the Family." McLelland and Stewart, 1982. *Auroras and Sad Prose*, Kate Couture, 21 Jun.  
 &emsp;&emsp;2021, aurorassadprose.wordpress.com/2021/06/21/running-in-the-family-by-michael-ondaatje/. Accessed 9 July 2026.  
 
 Orwin, James L. "Coming." *The Philip Larkin Society*, Jan. 2001, philiplarkin.com/poem-reviews/coming-2/. Accessed 9  
